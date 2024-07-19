@@ -6,5 +6,12 @@
             "name": "glebkarmanov"
         }
     ],
-    "require": {}
+    "autoload": {
+        "files": [
+            "bin/gendiff"
+        ]
+    },
+    "require-dev": {
+        "docopt/docopt": "^1.0"
+    }
 }
