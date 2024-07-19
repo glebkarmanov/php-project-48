@@ -5,16 +5,20 @@ namespace Project48\gendiff;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Docopt\Docopt;
+use Docopt;
 
 $doc = <<<DOC
-Example script.
+gendiff -h
+
+Generate diff
 
 Usage:
-  gendiff (-h | --help)
+  gendiff (-h|--help)
+  gendiff (-v|--version)
 
 Options:
-  -h --help     Show this screen.
+  -h --help                     Show this screen
+  -v --version                  Show version
 
 DOC;
 
