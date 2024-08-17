@@ -5,4 +5,4 @@ gendiff:
 	./bin/gendiff
 
 lint:
-	phpcs --standard=PSR12 src/
+	./vendor/bin/phpcs --standard=PSR12 src/
