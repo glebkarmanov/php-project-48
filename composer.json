@@ -6,9 +6,12 @@
             "name": "glebkarmanov"
         }
     ],
+    "bin": [
+        "bin/gendiff"
+    ],
     "autoload": {
         "files": [
-            "bin/gendiff"
+            "src/gendiffFunctions.php"
         ]
     },
     "require-dev": {
