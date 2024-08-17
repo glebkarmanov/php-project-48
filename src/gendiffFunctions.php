@@ -24,19 +24,16 @@ function genDiff(string $pathToFile1, string $pathToFile2): string
             if ($file1[$key] == $file2[$key]) {
                 $value = $file1[$key];
                 $result[] = "  $key: $value";
-            }
-            else {
+            } else {
                 $value1 = $file1[$key];
                 $value2 = $file2[$key];
                 $result[] = "- $key: $value1";
                 $result[] = "+ $key: $value2";
             }
-        }
-        elseif ($inFile1) {
+        } elseif ($inFile1) {
             $value = $file1[$key];
             $result[] = sprintf('- %s: %s', $key, json_encode($value));
-        }
-        else {
+        } else {
             $value = $file2[$key];
             $result[] = "+ $key: $value";
         }
