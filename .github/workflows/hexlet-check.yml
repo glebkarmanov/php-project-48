@@ -18,8 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Установка зависимостей
-        run: composer install
+      - name: Установка PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Установка зависимостей с обновлением
+        run: composer update
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
