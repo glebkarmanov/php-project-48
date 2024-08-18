@@ -18,6 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Установка зависимостей
+        run: composer install
+
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:
