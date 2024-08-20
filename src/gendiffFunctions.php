@@ -7,7 +7,6 @@ namespace CLI\genDiff;
 
 function genDiff(string $pathToFile1, string $pathToFile2): string
 {
-    // Если входные данные - файлы, парсим их содержимое как JSON
     if (file_exists($pathToFile1)) {
         $file1 = json_decode(file_get_contents($pathToFile1), true);
     } else {
@@ -24,7 +23,6 @@ function genDiff(string $pathToFile1, string $pathToFile2): string
         throw new \Exception("Invalid JSON input.");
     }
 
-    // Теперь получим уникальные ключи с обоих массивов
     $allKeys = array_unique(array_merge(array_keys($file1), array_keys($file2)));
 
     $result = [];
@@ -60,9 +58,3 @@ function genDiff(string $pathToFile1, string $pathToFile2): string
 
     return $formattedResult;
 }
-
-//$pathToFile1 = $argv[1];
-//$pathToFile2 = $argv[2];
-
-//$result = genDiff($pathToFile1, $pathToFile2);
-//echo $result . "\n";
