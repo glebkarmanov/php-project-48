@@ -24,7 +24,7 @@ jobs:
           php-version: '8.2'
 
       - name: Установка зависимостей
-        run: composer install
+        run: composer install --no-interaction --no-scripts --no-suggest
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
@@ -32,6 +32,15 @@ jobs:
           hexlet-id: ${{ secrets.HEXLET_ID }}
 
       - run: make lint
+
+      - name: Check PHP version
+        run: php -v
+
+      - name: Check PHPUnit version
+        run: ./vendor/bin/phpunit --version
+
+      - name: Show Composer dependencies
+        run: composer show
 
       - name: Run tests with coverage
         run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
