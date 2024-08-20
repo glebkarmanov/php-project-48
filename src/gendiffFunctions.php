@@ -1,13 +1,28 @@
 #!/usr/bin/env php
 <?php
 
+namespace CLI\genDiff;
+
 /// Файл для функций, которые я буду использовать в CLI
 
 function genDiff(string $pathToFile1, string $pathToFile2): string
 {
-    // Тут у нас 2 массива ассоциативных массива
-    $file1 = json_decode(file_get_contents($pathToFile1), true);
-    $file2 = json_decode(file_get_contents($pathToFile2), true);
+    // Если входные данные - файлы, парсим их содержимое как JSON
+    if (file_exists($pathToFile1)) {
+        $file1 = json_decode(file_get_contents($pathToFile1), true);
+    } else {
+        $file1 = json_decode($pathToFile1, true);
+    }
+
+    if (file_exists($pathToFile2)) {
+        $file2 = json_decode(file_get_contents($pathToFile2), true);
+    } else {
+        $file2 = json_decode($pathToFile2, true);
+    }
+
+    if ($file1 === null || $file2 === null) {
+        throw new \Exception("Invalid JSON input.");
+    }
 
     // Теперь получим уникальные ключи с обоих массивов
     $allKeys = array_unique(array_merge(array_keys($file1), array_keys($file2)));

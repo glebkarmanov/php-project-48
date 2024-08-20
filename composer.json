@@ -10,9 +10,14 @@
         "bin/gendiff"
     ],
     "autoload": {
-        "files": [
-            "src/gendiffFunctions.php"
-        ]
+        "psr-4": {
+            "CLI\\genDiff\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "require-dev": {
         "docopt/docopt": "^1.0",

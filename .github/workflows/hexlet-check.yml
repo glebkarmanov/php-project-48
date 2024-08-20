@@ -33,6 +33,9 @@ jobs:
 
       - run: make lint
 
+      - name: Run tests with coverage
+        run: ./vendor/bin/phpunit --coverage-clover=coverage.xml
+
       - name: Upload coverage to CodeClimate
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter

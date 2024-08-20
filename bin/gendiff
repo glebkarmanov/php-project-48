@@ -6,6 +6,7 @@ namespace Project48\gendiff;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Docopt;
+use function CLI\genDiff\genDiff;
 
 $doc = <<<DOC
 Generate diff

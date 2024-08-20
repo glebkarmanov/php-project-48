@@ -1,4 +1,4 @@
-[![hexlet-check](https://github.com/glebkarmanov/php-project-48/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/glebkarmanov/php-project-48/actions/workflows/hexlet-check.yml)
+[![my-check](https://github.com/glebkarmanov/php-project-48/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/glebkarmanov/php-project-48/actions/workflows/hexlet-check.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/56e44a1816ed0f241957/test_coverage)](https://codeclimate.com/github/glebkarmanov/php-project-48/test_coverage)
 
 ### Hexlet tests and linter status:
