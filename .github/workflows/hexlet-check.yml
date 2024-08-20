@@ -23,8 +23,8 @@ jobs:
         with:
           php-version: '8.2'
 
-      - name: Установка зависимостей с обновлением
-        run: composer update
+      - name: Установка зависимостей
+        run: composer install
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
